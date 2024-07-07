@@ -1,4 +1,8 @@
+#!/bin/bash
+
 clear
+
+# Print banner with colored text and glow effect
 echo -e "\e[31m █████╗ ██████╗ ██╗████████╗██╗   ██╗ █████╗  "
 echo -e "\e[31m██╔══██╗██╔══██╗██║╚══██╔══╝╚██╗ ██╔╝██╔══██╗ "
 echo -e "\e[96m███████║██║  ██║██║   ██║    ╚████╔╝ ███████║ "
@@ -10,21 +14,24 @@ echo -e " \e[91m                                                   ____      ___
 echo -e " \e[91m                                                  / __ \    / ____\ " 
 echo -e " \e[96m                                                 / /  \ \  ( (___   " 
 echo -e " \e[96m                                                ( ()  () )  \___ \  " 
-echo -e " \e[1;91m Youtube\e[96m / \e[100;97myoutube.com/h4ck3r0\e[0;31m                  ( ()  () )      ) )" 
-echo -e " \e[1;91m Github\e[96m /\e[1;93m H4Ck3R0                                \ \__/ /   ___/ /"  
-echo -e " \e[1;91m Telegram\e[1;96m /\e[1;92m H4Ck3R_0                              \____/   /____/"    
+echo -e " \e[1;91m YouTube\e[96m / \e[100;97mhttps://youtube.com/@gamingsongay9075?si=-iXhx9NLIY1hxsm7\e[0;31m                  ( ()  () )      ) )" 
+echo -e " \e[1;91m Facebook\e[96m /\e[1;93mhttps://www.facebook.com/adtmendai\e[0;31m                                \ \__/ /   ___/ /"  
+echo -e " \e[1;91m Telegram\e[1;96m /\e[1;92m ADITYA                              \____/   /____/"    
 echo ""
 
-banner ( ) {
+# Function to print banner
+banner() {
     printf ""
     echo -e "\e[1;31m  [\e[32m√\e[31m] \e[1;91m by \e[1;36mAditya \e[93m/ \e[100;92myoutube.com/h4ck3r0\e[0m"
 }
 
-wr ( ) {
+# Function for handling invalid input
+wr() {
     printf "\033[1;91m Invalid input!!!\n"
     selection
 }
 
+# Function for menu option 1
 1line() {
     apt update && apt upgrade
     pkg install zsh -y
@@ -50,6 +57,7 @@ wr ( ) {
     termux-open-url h4ck3r.me
 }
 
+# Function for menu option 2
 2line() {
     rm -rf ~/.zshrc
     git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
@@ -58,6 +66,7 @@ wr ( ) {
     bash os.sh
 }
 
+# Function for menu option 3
 3line() {
     pkg install zsh
     chsh -s zsh
@@ -65,12 +74,14 @@ wr ( ) {
     bash os.sh
 }
 
+# Function for menu option 4
 4line() {
     chsh -s bash
     cd ~/Termux-os
     bash os.sh
 }
 
+# Function for menu option 5
 5line() {
     rm -rf ~/.zshrc
     cd ~/Termux-os/.object
@@ -80,6 +91,7 @@ wr ( ) {
     bash os.sh
 }
 
+# Function for menu option 6
 6line() {
     cd ~/Termux-os/.object
     bash .1.sh
@@ -88,6 +100,7 @@ wr ( ) {
     bash os.sh
 }
 
+# Function for menu option 7
 7line() {
     cd ~/Termux-os/.object
     rm -rf ~/.zshrc
@@ -98,6 +111,7 @@ wr ( ) {
     bash os.sh
 }
 
+# Function for menu option 8
 8line() {
     rm -rf ~/Termux-os
     cd
@@ -106,6 +120,7 @@ wr ( ) {
     bash os.sh
 }
 
+# Function for menu selection
 selection() {
     cd ~/Termux-os
     echo -e -n "\e[1;96m Choose\e[1;96m Option : \e[0m"
@@ -124,6 +139,7 @@ selection() {
     esac
 }
 
+# Function to display menu
 menu() {
     banner
     printf "\n\033[1;91m[\033[0m1\033[1;91m]\033[1;92m Necessary Setup \n"
@@ -137,4 +153,6 @@ menu() {
     printf "\033[1;91m[\033[0m9\033[1;91m]\033[1;92m Exit\n\n\n"
     selection
 }
+
+# Call the menu function to start the script
 menu
