@@ -54,7 +54,7 @@ wr() {
     clear
     cd ~/Termux-os
     bash os.sh
-    termux-open-url h4ck3r.me
+    termux-open-url Aditya.me
 }
 
 # Function for menu option 2
